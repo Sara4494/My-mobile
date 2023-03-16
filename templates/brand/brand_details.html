@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    
+{% endblock title %}
+    
+
+{% block main %}
+
+<div class="container">
+    <div class="row">
+        {% for dev in brand %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <img src="{{dev.imageDev.url}}" alt="">
+                </div>
+            <hr>
+                <div class="card-title">
+                    <a href="{% url 'device_detail' dev.slug_dev %}">
+                        <h5>{{dev.nameDev}}</h5>
+ 
+                        <div class="card-body ">
+                            <a href="{% url 'device_update' dev.slug_dev%}" class="btn btn-primary">تعديل</a>
+
+                            
+                           
+                            <a href="{% url 'delete' dev.id  %}"class="btn btn-primary">حذف</a>
+                        </div>
+
+                    </a>
+                </div>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main %}

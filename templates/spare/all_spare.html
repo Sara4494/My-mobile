@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block main %}
+    <div class="contianer">
+        <h4>All spare</h4>
+       
+        <div class="row g-5 mb-5">
+            <div class="col-lg-10">
+                <div class="row g-5">
+                    <div class="card "> 
+            
+                        <form action="" method="get">
+                            {% bootstrap_form spare_filter.form %}
+                            <button class="btn-success" type="submit">بحث</button>
+                        </form>
+                    </div>
+                  
+                        
+                    {% for dev in all_spare %}
+                
+                    <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.6s">
+                        <div class="card-title">
+                            <h4><a href="{% url 'spare_detail' dev.slug %}">{{dev.name}}</a></h4>
+                          
+                          
+                        </div>
+                        
+                        
+                            
+                         
+                    </div>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+{% endblock main %}
+ 

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% load static %}
+{% block title %}
+   
+{{title}}
+{% endblock title %}
+    
+{% block main %}
+{% load bootstrap5 %}
+
+<div class="row">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'forms/form_bootstrap.html' %}
+
+        <button class="btn btn-outline-success col-3 mb-5 mx-auto" type="submit"> 
+ 
+            ارسال
+            
+        </button>
+        
+       
+    </form>
+</div>
+{% endblock main %}
+    

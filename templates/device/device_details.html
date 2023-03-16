@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="row">
+    
+    <div class="col-3">
+        <div class="card">
+            <div class="card-body text-center">
+                <img src="{{device.imageDev.url}}" alt="">
+            </div>
+            <div class="card-title text-center">
+                <h3>{{device}}</h3>
+            </div>
+        </div>
+    </div>
+    <div class="col-8 ml-auto">
+        <table class="table ">
+            <tbody>
+              <tr>
+                
+                <th>Mark</th>
+                <td scope="row">{{device}}</td>
+              </tr>
+              <tr>
+                <th scope="row"> displayTypeDev  </th>
+                <td>{{device.displayTypeDev}}</td>
+              </tr>
+              <tr>
+                <th scope="row">displaySizeDev</th>
+                <td>{{device.displaySizeDev}}</td>
+              </tr>
+              <tr>
+                <th scope="row">displayResDev  </th>
+                <td>{{device.displayResDev}}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+</div>
+    
+
+
+ 
+{% endblock main %}

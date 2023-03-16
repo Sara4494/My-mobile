@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block main %}
+    <div class="contianer">
+        <h4>All stores</h4>
+        <div class="card "> 
+            
+            <form action="" method="get">
+                {% bootstrap_form stores_filter.form %}
+                <button class="btn-success" type="submit">بحث</button>
+            </form>
+        </div>
+       
+        <div class="row g-5 mb-5">
+            <div class="col-lg-10">
+                <div class="row g-5">
+                    
+                  
+                        
+                    {% for dev in all_stores %}
+                
+                    <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.6s">
+                        <div class="card-title">
+                            <h4><a href="{% url 'store_detail' dev.slug %}">{{dev.name}}</a></h4>
+                            <hr>
+                            {{dev.location}}
+                            <hr>
+                            {{dev.category}}
+                            <hr>
+                            {{dev.engineer_name}}
+                            <hr>
+                            {{dev.created_at}}
+                            
+
+
+                        </div>
+                        
+                        
+                            
+                         
+                    </div>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+{% endblock main %}
+ 

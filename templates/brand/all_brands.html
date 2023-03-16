@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    
+{% endblock title %}
+    
+{% block main %}
+    <div class="contianer">
+        {{ request.path }}
+        <br>
+        {{ request.user.first_name }}
+        <br>
+        <h4>All Brands</h4>
+        <div class="row g-5 mb-5">
+            <div class="col-lg-10">
+                <div class="section-title mb-5">
+                    <h5 class="position-relative d-inline-block text-primary text-uppercase">NEW HERE? IN A HURRY?</h5>
+                    <h1 class="display-5 mb-0">SEE THE BEST PHONES RIGHT NOW IN OUR ALL-NEW BUYER'S GUIDE</h1>
+                </div>
+                <div class="row g-5">
+                    
+                    {% for brand in all_brand %}
+                    <div class="col-md-3 service-item wow zoomIn" data-wow-delay="0.6s">
+                        <div class="rounded-top overflow-hidden">
+                            {% if not brand.logo %}
+                                <h2>No Logo</h2>
+                                <img id="{{brand.id}}-{{brand.slug}}" class="img-fluid" src="{% static 'img/gsmarena_002.jpg' %}" alt="{{brand.slug}}" >
+                            {% else %}
+                                <picture >
+                                    <img class="d-flex w-100 h-100  " src="{{brand.logo.url}}" alt="{{brand.slug}}" srcset="">
+                                </picture>
+                            {% endif %}
+                        </div>
+                        <div class="position-relative bg-light rounded-bottom text-center p-4">
+                            <a href="{% url 'brand_details' brand.slug %}"><h5 class="m-0">{{brand.name}}</h5></a>
+                            <span>عدد الاجهزة {{brand.get_devices_count}}</span>
+                            <div class="card-body ">
+                               
+                               
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+{% endblock main %}

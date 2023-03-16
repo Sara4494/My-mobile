@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+
+{% block main %}
+ 
+<div class="row">
+ {% for field in form_device %}
+
+    <div class="col-auto">
+        {% bootstrap_field field show_label=False %}
+        
+        
+    </div>
+
+ {% endfor %}
+</div>
+
+{% endblock main %}
+    

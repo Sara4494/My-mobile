@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block main %}
+    <div class="contianer">
+        <h4>All  profile</h4>
+       
+        <div class="row g-5 mb-5">
+            <div class="col-lg-10">
+                <div class="row g-5">
+                {% for dev in all_profile %}
+                    <div class="col-md-4 service-item wow zoomIn" data-wow-delay="0.6s">
+                        <div class="card-title">
+                         {% if dev.slug %}
+                            <h4><a href="{% url 'profile_detail' dev.slug %}">{{dev.user}}</a></h4>
+
+                            <span><a href="{% url 'profile_update' dev.slug %}">تعديل</a></span>
+                          
+                         {% endif %}
+                        </div>
+                            <div class="rounded-top overflow-hidden">
+                                {% if dev.image %}
+                                <img class="img-fluid" src="{{dev.image.url}}" alt="">
+                                {% else %}
+                                <img src="{% static 'img/original.png' %}" alt="">
+                                {% endif %}
+                                </div>
+                            <div class="position-relative bg-light rounded-bottom text-center p-4">
+                              
+                        </div> 
+                    </div>
+                {% endfor %}
+                </div>
+            </div> 
+        </div>
+    </div>
+{% endblock main %}
+ 

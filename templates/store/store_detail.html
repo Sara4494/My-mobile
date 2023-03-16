@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+<div class="container">
+  
+            <div class="card">
+                <div class="card-title">
+                    <div class="col ml-auto">
+                        <table class="table ">
+                            <tbody>
+                              
+                              <tr>
+                                <th scope="row"> اسم الفرع </th>
+                                <td>{{store}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"> المكان  </th>
+                                <td>{{store.location}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">اسم المهندس</th>
+                                <td>{{store.engineer_name}}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row"> اسم البراند</th>
+                                <td>{{store.brands}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+        
+                </div>
+         
+            </div>
+</div>
+
+{% endblock main %}

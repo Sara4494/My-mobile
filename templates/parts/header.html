@@ -1,0 +1,94 @@
+{% load static %}
+<section class="head">
+    <div class="container-fluid bg-light ps-5 pe-0 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center">
+                    <small class="py-2"><i class="far fa-clock text-primary me-2"></i>sara</small>
+                </div>
+            </div>
+            <div class="col-md-6 text-center text-lg-end">
+                <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
+                    <div class="me-3 pe-3 border-end py-2">
+                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>riad52166@gmail.com</p>
+                    </div>
+                    <div class="py-2">
+                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+012 345 6789</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav dir="rtl" class="justify-content-between navbar rtl navbar-expand-lg bg-white navbar-light shadow-sm px-5 py-3 py-lg-0">
+        <a href="{% url 'home'%}" class="navbar-brand p-0">
+            <h1 class="m-0 text-primary"> <img width="50px" height="50px" src="{% static 'img/logo.jpg' %}" alt=""> </i>موبايلى</h1>
+        </a>
+        <hr>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+                
+                {% if request.path == "/"%}
+                <a href="{% url 'home'%}" class="nav-item nav-link active">الرئيسية</a>
+                {% elif request.path == "/all_brands" %}
+
+                {% else %}
+                <a href="{% url 'home'%}" class="nav-item nav-link">الرئيسية</a>
+                {% endif %}
+                    
+                <a href="{% url 'fix_device' %}" class="nav-item nav-link">اصلاح جهاز</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"> كل </a>
+                    <div class="text-end dropdown-menu m-0">
+                        <a href="{% url 'all_devices' %}" class="dropdown-item">جميع الموبايلات</a>
+                       <!-- <a href="#" class="dropdown-item">جميع قطع الغيار </a>-->
+                        <a href="{% url 'all_brands' %}" class="dropdown-item"> جميع البراندات </a>
+                        <a href="{% url 'all_stores' %}" class="dropdown-item">جميع الفروع</a>
+                        <a href="{% url 'all_profile' %}" class="dropdown-item">جميع البروفايلات</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">اضافة</a>
+                    <div class="text-end dropdown-menu m-0">
+                        <a href="{% url 'create_device' %}" class="dropdown-item">اضافة جهاز</a>
+                        <a href="{% url 'create_spare' %}" class="dropdown-item">اضافة قطع الغيار </a>
+                        <a href="{% url 'create_brand' %}" class="dropdown-item">اضافة براند </a>
+                        <a href="{% url 'create_store' %}" class="dropdown-item">اضافة فرع</a>
+                    </div>
+                </div>
+            </div>
+            <form method="GET" action="{%url 'all_devices'%}" class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                  <input class="form-control form-control-navbar" name="search_name" type="search" placeholder="Search" aria-label="Search">
+                  <div class="input-group-append">
+                    <button class="btn btn-navbar" type="submit">
+                      <i class="fas fa-search"></i>
+                    </button>
+                  </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </nav>
+    <div class="container-fluid mt-2">
+        <div class="row gx-0">
+            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
+                {% if user.is_authenticated %}
+                    
+                        
+                <button type="button" class="btn btn-light"><b>{{ user.profile.first_name }}</b> المستخدم </button>
+                <a href="{% url 'logout' %}" class="btn btn-danger">Log Out</a> {% else %} {% if request.path != "/accounts/login/" %}
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a href="{% url 'login' %}" class="btn btn-primary">يرجى تسجل الدخول أولا </a>
+                    </div>
+                </div>
+                {% endif %}{% endif %}
+                
+            </div>
+        </div>
+    </div>
+</section>

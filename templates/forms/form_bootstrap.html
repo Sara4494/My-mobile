@@ -1,0 +1,6 @@
+{% load bootstrap5 %}
+{% for field in form %}
+<div class="col-md-4 m-auto">
+    {% bootstrap_field field show_label=False %}
+</div>
+{% endfor %}

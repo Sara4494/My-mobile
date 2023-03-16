@@ -1,0 +1,94 @@
+{% extends "base.html" %} {% load static %} {% block main %}
+
+<!-- Carousel Start -->
+<section class="container-fluid">
+{% include 'index_sections/carousel.html' %}
+</section>
+<!-- Carousel End -->
+
+<!-- Banner Start -->
+<section class="container-fluid">
+</section>
+<!-- Banner Start -->
+
+<!-- About Start -->
+<div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <div class="section-title mb-4">
+                    <h5 class="position-relative d-inline-block text-dark text-uppercase">About Us</h5>
+                    <h1 class="display-5 mb-0">Samsung Galaxy S23 Ultra review</h1>
+                </div>
+                <h4 class="text-body fst-italic mb-4">A year later, the Note that isn't returns. The Samsung Galaxy S23 Ultra brings predictably
+                     minor upgrades - camera tweaks here and new chipset there, mostly - but how much can you really improve on the S22 Ultra in
+                      just a year? We'll attempt to answer that question and see if the new Ultra can spark excitement in ways the specsheet 
+                      couldn't.</h4>
+                <p class="mb-4">And it's an expansive specsheet, of course. At the Ultra's heart is the Snapdragon 8 Gen 2, and it's one specifically made for the Galaxies - with higher clock rates than competitors get. The latest Qualcomm top-end chip also comes with efficiency promises, and we would never say no to some extra endurance.
+
+                    The camera sees the introduction of a new 200MP sensor, up from the 108MP resolution of Ultras past. The couple of telephotos remain a staple of the lineup and a standout feature in the market where 10x optical zoom is nowhere to be found outside of the Samsung offerings. The 2023 Ultra is still the only model in the lineup with an autofocusing ultrawide - more of an ongoing rant we just had to include here about the lack of it on the lesser S23s than an actual noteworthy feature of the ultimate Galaxy.
+                    
+                    </p>
+                <div class="row g-3">
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.3s">
+                        <h5 class="mb-3"><i class="fas fa-circle text-primary me-3"></i>1440x3088 pixels</h5>
+                        <h5 class="mb-3"><i class="fas fa-circle text-primary me-3"></i>200MP
+                            4320p</h5>
+                    </div>
+                    <div class="col-sm-6 wow zoomIn" data-wow-delay="0.6s">
+                        <h5 class="mb-3"><i class="fas fa-circle text-primary me-3"></i> 8/12GB RAM
+                            </h5>
+                        <h5 class="mb-3"><i class="fas fa-circle text-primary me-3"></i>5000mAh</h5>
+                    </div>
+                </div>
+                <a href="appointment.html" class="btn btn-primary py-3 px-5 mt-4 wow zoomIn" data-wow-delay="0.6s">buy now</a>
+            </div>
+            <div class="col-lg-5" style="min-height: 500px;">
+                <div class="position-relative h-100">
+                    <img class="position-absolute w-100 h-50 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/const/gsmarena.jpg' %}" style="object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+<!-- Appointment Start -->
+<div class="container-fluid bg-primary bg-appointment my-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container">
+        <div class="row gx-5">
+            <div class="col-lg-6 py-5">
+                <div class="py-5">
+                    <h1 class="display-5 text-center mb-4 text-dark">Realme GT Neo 5 debuts with 150W and 240W charging versions</h1>
+                    <p class="text-center mb-0">Realme GT Neo 5 is powered by a Snapdragon 8+ Gen 1 chipset. The 240W version has 16GB RAM and either 256GB or 1TB storage. The GT Neo 5 150W can be purchased with either 8GB, 12GB, or 16GB RAM, while storage is always 256GB.
+
+                        The phone is built around a 6.74” 10-bit AMOLED screen with 144Hz refresh rate. The resolution is 2772 x 1240 pixels and you get a 100% DCI-P3 coverage and 1,500Hz touch sampling rate.
+                        
+                        </p>
+                </div>
+            </div>
+            
+        
+        </div>
+ 
+    </div>
+    
+</div>
+<!-- Appointment End -->
+
+<!-- Service Start -->
+{% include 'index_sections/thebestdevices.html' %}
+<!-- Service End -->
+
+<!-- Offer Start -->
+ 
+<!-- Offer End -->
+
+<!-- Pricing Start -->
+  
+          
+    
+<!-- Team End -->
+
+{% endblock main %}
+ 

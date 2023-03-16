@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load bootstrap5 %}
+{% block main %}
+    <div class="contianer">
+        <h4>All  devies</h4>
+       
+      
+     
+                  
+             
+            <div class="row g-5 mb-5">
+                {% for dev in all_devices %}
+                
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+
+                
+                        {% if dev.imageDev %}
+                        <img src="{{dev.imageDev.url}}" class="card-img-top  " alt="">
+                    
+                        {% else %}
+                        <img class="card-img-top" src="{% static 'img/original.png' %}" alt="">
+                        {% endif %}
+                        <hr>
+
+                        <div class="card-body ">
+                             
+                            <h5><a href="{% url 'device_detail' dev.slug_dev %}">{{dev.nameDev}}</a></h5>
+                            
+                            <a href="{% url 'device_update' dev.slug_dev%}" class="btn btn-primary">تعديل</a>
+                            <a href="{% url 'delete' dev.id %}"class="btn btn-primary">حذف</a>
+                        </div>
+                    </div>
+                </div>
+            
+                {% endfor %}
+            </div>
+
+           
+        
+    </div>
+{% endblock main %}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                             
+
+                           
+ 

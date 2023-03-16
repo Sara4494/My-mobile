@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    
+{% endblock title %}
+    
+{% block main %}
+<div class="contianer">
+    <h4>All fix</h4>
+   
+    <div class="row g-5 mb-5">
+        <div class="col-lg-10">
+            <div class="row g-5">
+                {% for dev in all_fix %}
+                <div class="col-5 ml-auto">
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <table class="table ">
+                                <tbody>
+        
+                                <tr>
+                                    
+                        
+                                    <th>اسم الخدمة </th>
+                                        <td scope="row">{{dev.name}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> نوع الخدمة  </th>
+                                        <td>{{dev.fault}} </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">  العميل (طالب الخدمة)</th>
+                                        <td>{{dev.name_to_cstmr}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">  التاجر (مقدم الخدمة) </th>
+                                        <td>{{dev.device}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row"> نوع الجهاز</th>
+                                        <td>{{dev.quality_degree}}</td>
+                                </tr>
+                                </tbody>
+                              </table>
+                              <a href="{% url 'fix_update' dev.id %}" class="btn btn-primary">تعديل</a>
+                              <a href="{% url 'fix_delete' dev.id %}"class="btn btn-primary">حذف</a>
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+
+                    
+
+ 
+                </div>
+
+
+
+
+
+
+
+                
+               
+                {%endfor%}
+                    
+              
+                
+               
+            </div>
+        </div> 
+    </div>
+</div>
+                  
+{% endblock main %}
